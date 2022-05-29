@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bharath brands</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+    <header class="headers">
+        <div class="containers">
+            <div class="headers1">
+                <h2>EDIT Account</h2>
+            </div>
+        </div>
+    </header>
+    <img src = "{% static 'img/img.png' %}" height="200" width="200" class="img1">
+    {% for d in data %}
+    <form class="form" method="post" action="/update/{{d.id}}/">
+        {% csrf_token %}        
+        <label class="form1">Account number:</label>
+        <input type="text" class="input1" name="num" value={{d.account_number}} /><br><br>
+        <label class="form1">Account Name:</label>
+        <input type="text" class="input12" name="name" value={{d.account_name}} /><br><br>
+        <label class="form1">Description:</label>
+        <input type="text" class="input13" name="Des" value={{d.description}} /><br><br>
+        <label class="form1">Account Type:</label>
+        <select name = "drop1"class="input14" value={{d.account_type}} >
+            <option value="Saving-Bank">Saving-Bank</option>
+            <option value="Saving-Bank">Saving-Bank</option>
+            <option value="Current-Ban">Current-Ban</option>
+            <option value="Petty Cash">Petty Cash</option>
+            <option value="Mobile Wallet">Mobile Wallet</option>
+            <option value="UPI Wallet">UPI Wallet</option>
+        </select><br><br>
+        <label class="form1">Openig Balance:  </label>
+        <input type="text" class="input15" name="op_blance" value={{d.opening_balance}} /><br><br>
+        <label class="form1">Current Balance:  </label>
+        <input type="text" class="input16" name="cr_balance" value={{d.current_balance}} /><br><br>
+        <input class="sub1" type="submit" value="Update"/>
+     
+    </form>
+    {% endfor %}
+</body>
+</html>

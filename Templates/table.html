@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bharath brands</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header1">
+                <h2>Show Details</h2>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <img src = "{% static 'img/img.png' %}" height="200" width="200" class="img1">
+    <h1>Hello</h1>
+    <div class="table" style="position: relative; ">
+        <table>
+            <tr><td>Account Number</td>
+                <td>Account Name</td>
+                <td>Description</td>
+                <td>Admin</td>
+            </tr>
+            {% for data_value in data %}
+            <tr><td>{{data_value.account_number}}</td>
+                <td>{{data_value.account_name}}</td>   
+                <td>{{data_value.description}}</td> 
+                <td><button class="btn1"><a href="/edit/{{data_value.id}}/">Edit</a></button>
+                <button class="btn1"><a href="/delete/{{data_value.id}}/">Delete</a></button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+   
+    <button class="btn1"><a href="/">Cancel</a></button>
+    </body>
+</html>
+    

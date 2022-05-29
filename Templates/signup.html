@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bharath brands</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+    <header class="headers">
+        <div class="containers">
+            <div class="headers1">
+                <h2>Canditate Signup</h2>
+            </div>
+        </div>
+    </header>
+    <img src = "{% static 'img/img.png' %}" height="200" width="200" class="img1">
+    <form class="form" method="post">
+        {% csrf_token %}
+        
+        <label class="form1">Name:</label>
+        <input type="text" class="form11"name="name"/><br><br>
+        <label class="form1">Email:   </label>
+        <input type="email" class="form12" name="email"/><br><br>
+        <label class="form1">Phone:   </label>
+        <input type="text" class="form13" name="phone number"/><br><br>
+        <label class="form1">Username:</label>
+        <input type="text"  class="form14" name="uname"/><br><br>
+        <label class="form1">Password:  </label>
+        <input type="password" class="form15" name="password"/><br><br>
+        <input class="sub1" type="submit"/>
+        <button class="btn1"><a href="/">Cancel</a></button>
+    </form>
+</body>
+</html>

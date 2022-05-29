@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bharath brands</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+    <div>
+        <header class="header">
+            <div class="container">
+                <div class="header1">
+                    <h2>BharathBrands</h2>
+                        <ul>
+                            <li><a href="signup/">Sign up</a></li>
+                            <li><a href="signin/">Sign in</a></li>
+                        </ul>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div>
+        <img src = "{% static 'img/img.png' %}" height="200" width="200" class="img">
+    </div>
+</body>
+</html>
